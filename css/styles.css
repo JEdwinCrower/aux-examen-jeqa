@@ -1,0 +1,166 @@
+:root {
+   --hover-bg-color: #ff0000bc;
+   --basic-text-color: #c0c0c0;
+   --navbar-height: 110px;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+body {
+   background-image: url("../img/tms.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2.5em 7em 2em 7em;
+   position: fixed;
+   width: 100%;
+   background-color: transparent;
+   top: 0;
+   left: 0;
+}
+
+.menu {
+   display: flex;
+   justify-content: flex-end;
+   line-height: 20pt;
+   overflow: hidden;
+}
+
+.menu li {
+   display: flex;
+}
+
+.menu li a {
+   color: var(--basic-text-color);
+   text-decoration: none;
+   width: 100%;
+   padding: 10px 20px;
+}
+
+.menu .active {
+   color: white;
+   font-weight: bold;
+}
+
+.menu a:hover {
+   color: #ffffff;
+   background-color: var(--hover-bg-color);
+   font-weight: bold;
+   transition: ease-in 0.3s;
+   text-decoration: underline white;
+}
+
+.logo-menu {
+   display: flex;
+   justify-content: space-between;
+}
+
+.logo-menu img {
+   max-height: 80px;
+}
+
+.menu-toggle {
+   display: none;
+   font-size: 18pt;
+   cursor: pointer;
+   font-weight: bold;
+   padding: 10px 0;
+   color: var(--basic-text-color);
+}
+
+
+
+.section-banner {
+   padding: 2.5em 7em 2em 7em;
+   margin-top: var(--navbar-height);
+}
+
+.banner {
+   display: flex;
+   flex-direction: column;
+   max-width: 50%;
+}
+
+.banner .banner-image {
+   max-width: 100%;
+}
+
+.banner .banner-text {
+   margin-top: 0.7em;
+   font-size: 14pt;
+   word-spacing: 0.3em;
+}
+
+.banner .description {
+   color: var(--basic-text-color);
+}
+
+.banner .description.classification {
+   background-color: red;
+   padding: 0.2em 0.4em;
+   border-radius: 0.2em;
+}
+
+.banner .description.two {
+   margin-top: 0.7em;
+   font-size: 16pt;
+}
+
+@media screen and (max-width: 720px) {
+   nav {
+      padding: 2.5em 3em 2em 3em;
+      justify-content: start;
+   }
+
+   .section-banner {
+      margin-top: 2em;
+      padding: 2.5em 3em 2em 3em;
+      width: 100%;
+   }
+
+   .section-banner .banner {
+      min-width: 100%;
+   }
+
+   .navbar {
+      flex-direction: column;
+   }
+
+   .logo-menu {
+      width: 100%;
+   }
+
+   .menu-toggle {
+      display: block;
+   }
+
+   .menu {
+      display: none;
+      flex-direction: column;    
+      justify-content: flex-start;
+      margin-top: 1em;
+      /* background-color: rgba(255, 0, 0, 0.318); */
+      transition: 300ms ease;
+   }
+   .navbar.open {
+      background-color: rgba(0, 0, 0, 0.95);
+      height: 100%;
+   }
+   .menu.open {
+      display: flex;
+      height: 100%;
+      width: 100%;
+   }
+
+}
